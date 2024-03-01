@@ -1,0 +1,17 @@
+function encrypted_text = caesar_cipher_encrypt(plain_text, shift)
+    % Convert the plaintext to uppercase
+    plain_text = lower(plain_text);
+    
+    % Initialize the encrypted text
+    encrypted_text = '';
+    
+    % Iterate over each character in the plaintext
+    for i = 1:length(plain_text)
+            % Shift the character by the specified amount
+            shifted_char = char(mod(double(plain_text(i)) - 97 + shift, 26) + 97);
+            encrypted_text = [encrypted_text, shifted_char];
+           end
+    
+    encrypted_text = upper(encrypted_text);
+    disp(encrypted_text);
+end
